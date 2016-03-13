@@ -7,8 +7,17 @@ require([
 
     var widgetA = declare([_WidgetBase, _TemplatedMixin], {
 
-        templateString: '<div>Hello widget: {{ name }}</div>',
-        name: 'widgetA'
+        templateString: '<div {{event "onclick:_onClick"}}>Hello widget: <span {{ attach "nameNode" }}>{{ name }}</span></div>',
+        name: 'widgetA',
+
+        postCreate: function() {
+            this.inherited(arguments);
+            console.log(this.nameNode);
+        },
+
+        _onClick: function() {
+            alert(this.name);
+        }
 
     });
 
