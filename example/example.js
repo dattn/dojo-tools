@@ -2,17 +2,24 @@ require([
     'dojo/_base/declare',
     'dijit/_WidgetBase',
     'dattn/widget/_TemplatedMixin',
+    'dojo/text!./template.html',
     'dojo/domReady!'
-], function(declare, _WidgetBase, _TemplatedMixin) {
+], function(declare, _WidgetBase, _TemplatedMixin, template) {
 
     var widgetA = declare([_WidgetBase, _TemplatedMixin], {
 
-        templateString: '<div {{event "onclick:_onClick"}}>Hello widget: <span {{ attach "nameNode" }}>{{ name }}</span></div>',
+        templateString: template,
         name: 'widgetA',
 
         postCreate: function() {
             this.inherited(arguments);
-            console.log(this.nameNode);
+
+            var t = this;
+            var index = 1;
+            setInterval(function() {
+                t.set('counter', 'hallo ' + index);
+                index++;
+            }, 1000);
         },
 
         _onClick: function() {

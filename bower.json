@@ -18,6 +18,7 @@
   "dependencies": {
     "dojo": "^1.10.4",
     "dijit": "^1.10.4",
-    "handlebars": "^4.0.5"
+    "handlebars": "^4.0.5",
+    "dbind": "https://github.com/kriszyp/dbind.git"
   }
 }
