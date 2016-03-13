@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var dojoConfig = {
+                isDebug: true,
+                baseUrl: '/src',
+                tlmSiblingOfDojo: false,
+                packages: [
+                    { name: 'dojo',  location: '/bower_components/dojo'  },
+                    { name: 'dijit', location: '/bower_components/dijit' },
+                    { name: 'handlebars', location: '/bower_components/handlebars' }
+                ]
+            };
+        </script>
+        <script src="/bower_components/dojo/dojo.js"></script>
+        <script src="example.js"></script>
+    </head>
+    <body>
+        <div id="widgetA"></div>
+    </body>
+</html>
